@@ -82,8 +82,8 @@ Make sure you have the following installed:
 1. **Clone the repository**
 
 ```bash
-git clone https://github.com/ashish68403-byte/typescript-rest-api.git
-cd typescript-rest-api
+git clone https://github.com/ashish68403-byte/secure-typescript-rest-api.git
+cd secure-typescript-rest-api
 ```
 
 2. **Install dependencies**
