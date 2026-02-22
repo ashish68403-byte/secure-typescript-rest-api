@@ -24,14 +24,18 @@ app.use(bodyParser.json());
 
 const server = http.createServer(app);
 
-server.listen(8080, () => {
-    console.log("Server is running on http://localhost:8080/");
-});
-
 const MONGO_URL = process.env.MONGO_URI as string;
 
 mongoose.Promise = Promise;
 
 mongoose.connection.on('error', (error: Error) => console.log(error));
+
+mongoose.connect(MONGO_URL)
+  .then(() => {
+    console.log("DB Connected");
+    server.listen(8080, () => {
+      console.log("Server running");
+    });
+  });
 
 app.use('/', router());
